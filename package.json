@@ -4,6 +4,7 @@
   "description": "usage: npm install & node server",
   "main": "server.js",
   "dependencies": {
+    "express": "^4.16.3",
     "axios": "^0.18.0",
     "cors": "^2.8.4",
     "express-query-boolean": "^2.0.0",

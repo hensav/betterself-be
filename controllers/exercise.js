@@ -14,6 +14,9 @@ exports.new = async (req, res) => {
   if (training.started === false) {
     training.started = true
     training.time = time
+    setInterval(()=>{
+      training.time -= 1000
+    }, time)
     setTimeout(() => {
       training.started = false
       training.time = 0

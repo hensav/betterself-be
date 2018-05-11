@@ -26,7 +26,8 @@ exports.new = async (req, res) => {
   return res.status(201).send({
     message: 'exercise ' + training.exercise + "started for " + training.time + "ms.",
     started: training.started,
-    time: training.time
+    time: training.time,
+    totalTime: time
   })
 }
 

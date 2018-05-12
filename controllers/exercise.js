@@ -3,7 +3,8 @@ const axios = require('axios')
 let training = {
   started: false,
   exercise: "",
-  time: 0
+  time: 0,
+  startedFor: 0
 }
 
 exports.new = async (req, res) => {
@@ -14,6 +15,7 @@ exports.new = async (req, res) => {
   if (training.started === false) {
     training.started = true
     training.time = time
+    training.startedFor = time
     setInterval(()=>{
       training.time !== 0 ? training.time -= 1000 :null
     }, 1000)
@@ -38,6 +40,7 @@ exports.status = async (req, res) => {
     ? 'exercise ' + training.exercise + 'in progresss'
     :  'exercise ' + training.exercise + 'not in progress',
     started: training.started,
-    time: training.time
+    time: training.time,
+    startedFor: training.startedFor
   })
 }
